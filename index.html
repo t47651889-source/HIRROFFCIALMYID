@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HIRROFFCIAL STORE - Premium Apps Sejak 2019</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:linear-gradient(135deg,#0f0f1e,#1a1a2e,#16213e);color:#fff;padding:15px;min-height:100vh}
+#loader{position:fixed;inset:0;background:#0f0f1e;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99;transition:.6s}
+#loader.hide{opacity:0;visibility:hidden}
+.ring{width:80px;height:80px;border:4px solid #7b2ff733;border-top-color:#00d4ff;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lt{font-size:1.4rem;font-weight:700;background:linear-gradient(90deg,#00d4ff,#7b2ff7,#f107a3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
+h1{font-size:2.4rem;text-align:center;background:linear-gradient(90deg,#00d4ff,#7b2ff7,#f107a3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0 8px}
+.sub{text-align:center;color:#b0b0c5;margin-bottom:12px}
+.badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.bdg{background:#00d4ff22;color:#00d4ff;padding:5px 14px;border-radius:20px;font-size:.8rem;border:1px solid #00d4ff44}
+.bdg.g{background:#ffc10722;color:#ffc107;border-color:#ffc10744}
+.bdg.gr{background:#00ff8822;color:#00ff88;border-color:#00ff8844}
+.trust{max-width:1100px;margin:0 auto 25px;padding:25px 15px;background:linear-gradient(135deg,#00d4ff11,#7b2ff711,#f107a311);border:1px solid #ffffff15;border-radius:18px;position:relative;overflow:hidden}
+.trust::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00d4ff,#7b2ff7,#f107a3)}
+.trust h3{text-align:center;font-size:1.3rem;margin-bottom:5px}
+.trust h3 span{background:linear-gradient(90deg,#00d4ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.trust p{text-align:center;color:#9090a8;font-size:.85rem;margin-bottom:20px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.sb{text-align:center;padding:15px 10px;background:#00000040;border:1px solid #ffffff12;border-radius:12px;transition:.3s}
+.sb:hover{transform:translateY(-4px);border-color:#00d4ff66}
+.sb i{font-size:1.6rem;font-style:normal}
+.sb .n{font-size:1.6rem;font-weight:800;background:linear-gradient(90deg,#00ff88,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:5px 0}
+.sb .l{font-size:.78rem;color:#b0b0c5}
+.live{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:15px;font-size:.82rem;color:#b0b0c5}
+.dot{width:9px;height:9px;background:#00ff88;border-radius:50%;box-shadow:0 0 10px #00ff88;animation:blink 1.5s infinite}
+@keyframes blink{50%{opacity:.3}}
+.tg-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:20px 0}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;border-radius:12px;text-decoration:none;font-weight:600;font-size:.9rem;transition:.3s;color:#fff}
+.btn1{background:linear-gradient(90deg,#0088cc,#00b4ff);box-shadow:0 4px 20px #0088cc66}
+.btn2{background:linear-gradient(90deg,#7b2ff7,#f107a3);box-shadow:0 4px 20px #7b2ff766}
+.btn:hover{transform:translateY(-3px)}
+.st{text-align:center;font-size:1.6rem;margin:30px 0 20px}
+.st span{background:linear-gradient(90deg,#00d4ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;max-width:1200px;margin:0 auto}
+.card{background:#ffffff0a;border:1px solid #ffffff12;border-radius:14px;padding:15px;transition:.3s;position:relative;overflow:hidden;opacity:0;animation:fu .5s ease forwards}
+@keyframes fu{to{opacity:1;transform:translateY(0)}}
+.card{transform:translateY(15px)}
+.card:hover{transform:translateY(-4px);border-color:#00d4ff66;box-shadow:0 8px 25px #7b2ff744}
+.ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.ch{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ch h3{font-size:.98rem}
+.card .d{font-size:.8rem;color:#9090a8;margin-bottom:12px;line-height:1.35}
+.pr{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px dashed #ffffff18}
+.p{font-size:1rem;font-weight:700;background:linear-gradient(90deg,#00ff88,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.p small{-webkit-text-fill-color:#9090a8;font-size:.7rem;display:block;font-weight:400}
+.buy{background:#00d4ff22;color:#00d4ff;padding:6px 12px;border-radius:8px;font-size:.78rem;text-decoration:none;font-weight:600;border:1px solid #00d4ff44;transition:.3s}
+.buy:hover{background:#00d4ff;color:#0f0f1e}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:1200px;margin:0 auto}
+.tc{background:#ffffff0a;border:1px solid #ffffff12;border-radius:14px;padding:16px;transition:.3s;position:relative}
+.tc:hover{transform:translateY(-4px);border-color:#f107a366;box-shadow:0 8px 25px #f107a333}
+.tc .date{position:absolute;top:14px;right:14px;font-size:.68rem;color:#70708a}
+.th{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.tn{font-weight:600;font-size:.9rem}
+.tu{font-size:.75rem;color:#70708a}
+.str{color:#ffc107;font-size:.85rem;margin-bottom:6px}
+.tt{font-size:.85rem;color:#b0b0c5;line-height:1.45;font-style:italic}
+.vb{display:inline-block;background:#00ff8822;color:#00ff88;font-size:.68rem;padding:3px 8px;border-radius:10px;margin-top:8px;border:1px solid #00ff8844}
+.os{max-width:650px;margin:50px auto 20px;padding:30px 25px;background:#ffffff0a;border:1px solid #ffffff15;border-radius:18px;position:relative}
+.os::before{content:'';position:absolute;top:-2px;left:10%;right:10%;height:3px;background:linear-gradient(90deg,#00d4ff,#7b2ff7,#f107a3);border-radius:3px}
+.os h2{text-align:center;font-size:1.4rem;margin-bottom:6px;background:linear-gradient(90deg,#00d4ff,#7b2ff7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.os .sub{font-size:.85rem;margin-bottom:20px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:.85rem;color:#b0b0c5;margin-bottom:6px}
+.fg label span{color:#f107a3}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 13px;background:#00000050;border:1px solid #ffffff18;border-radius:10px;color:#fff;font-size:.9rem;font-family:inherit;outline:none;transition:.3s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#00d4ff;box-shadow:0 0 0 3px #00d4ff22}
+.fg select option{background:#1a1a2e}
+.fg textarea{resize:vertical;min-height:70px}
+.sub-btn{width:100%;padding:13px;background:linear-gradient(90deg,#00d4ff,#7b2ff7);color:#fff;border:none;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:.3s;letter-spacing:1px}
+.sub-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px #00d4ff66}
+#toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,150px);background:linear-gradient(90deg,#00c853,#00e676);padding:12px 22px;border-radius:12px;font-weight:600;transition:.4s;z-index:98;font-size:.9rem}
+#toast.show{transform:translate(-50%,0)}
+.ft{text-align:center;margin-top:50px;padding:25px 15px;color:#70708a;font-size:.85rem;border-top:1px solid #ffffff08}
+.ft a{color:#00d4ff;text-decoration:none}
+.ft .est{display:inline-block;background:linear-gradient(90deg,#ffc10722,#f107a322);border:1px solid #ffc10744;color:#ffc107;padding:5px 14px;border-radius:20px;font-size:.8rem;font-weight:600;margin-bottom:12px}
+@media(max-width:600px){h1{font-size:1.8rem}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="ring"></div><div class="lt">HIRROFFCIAL STORE</div></div>
+<div id="toast">✅ Pesanan dikirim!</div>
+
+<h1>HIRROFFCIAL STORE</h1>
+<p class="sub">🔒 Pusat Aplikasi Premium Termurah & Terpercaya</p>
+<div class="badges">
+<span class="bdg gr">⚡ Proses Cepat</span>
+<span class="bdg g">🏆 Sejak 2019</span>
+<span class="bdg">🔒 Aman Bergaransi</span>
+</div>
+
+<div class="trust">
+<h3>💎 <span>Dipercaya Ratusan Pelanggan</span></h3>
+<p>Berdiri sejak 2019 — Melayani amanah hingga sekarang</p>
+<div class="stats">
+<div class="sb"><i>🛒</i><div class="n" data-t="1500">0</div><div class="l">Total Transaksi</div></div>
+<div class="sb"><i>👥</i><div class="n" data-t="850">0</div><div class="l">Pelanggan Setia</div></div>
+<div class="sb"><i>📱</i><div class="n" data-t="60">0</div><div class="l">Produk Premium</div></div>
+<div class="sb"><i>📅</i><div class="n" data-t="7">0</div><div class="l">Tahun Pengalaman</div></div>
+<div class="sb"><i>⭐</i><div class="n" data-t="100">0</div><div class="l">% Kepuasan</div></div>
+</div>
+<div class="live"><span class="dot"></span><span>Aktif sejak 2019 • Admin online</span></div>
+</div>
+
+<div class="tg-btns">
+<a href="https://t.me/HIRROFFCIAL" target="_blank" class="btn btn1">✈️ Channel Telegram</a>
+<a href="https://t.me/Alexatestiku" target="_blank" class="btn btn2">⭐ Testimoni Pembeli</a>
+</div>
+
+<h2 class="st">📱 <span>Daftar Aplikasi Premium</span></h2>
+<div class="grid" id="apps"></div>
+
+<h2 class="st">⭐ <span>Testimoni Pembeli</span></h2>
+<div class="tg" id="testis"></div>
+
+<div class="os">
+<h2>📝 Form Pemesanan</h2>
+<p class="sub">Isi data, pesanan otomatis terkirim ke Telegram admin</p>
+<form id="of">
+<div class="fg"><label>Nama Lengkap <span>*</span></label><input id="nm" placeholder="Nama kamu" required></div>
+<div class="fg"><label>Username Telegram <span>*</span></label><input id="tg2" placeholder="@username" required></div>
+<div class="fg"><label>Pilih Aplikasi <span>*</span></label><select id="pd" required><option value="">-- Pilih Aplikasi --</option></select></div>
+<div class="fg"><label>Durasi <span>*</span></label><select id="dr" required><option value="">-- Pilih Durasi --</option><option>1 Bulan</option><option>2 Bulan</option><option>3 Bulan</option><option>6 Bulan</option><option>12 Bulan</option></select></div>
+<div class="fg"><label>Catatan (opsional)</label><textarea id="ct" placeholder="Request tambahan..."></textarea></div>
+<button class="sub-btn" type="submit">🚀 Kirim Pesanan via Telegram</button>
+</form>
+</div>
+
+<div class="ft">
+<div class="est">🏆 Trusted Since 2019 - 2026</div>
+<p>© 2019-2026 <b>HIRROFFCIAL STORE</b> — All Rights Reserved</p>
+<p style="margin-top:8px">Order: <a href="https://t.me/HIRROFFCIAL">t.me/HIRROFFCIAL</a> • Testi: <a href="https://t.me/Alexatestiku">t.me/Alexatestiku</a></p>
+<p style="margin-top:10px;font-size:.75rem">⚠️ Produk legal & bergaransi</p>
+</div>
+
+<script>
+// DATA APLIKASI
+const apps=[
+["Netflix Premium","1 User • Full garansi","25.000","#e50914,#b20710","N"],
+["Spotify Premium","No Ads • Offline • HD","15.000","#1db954,#0d7a35","S"],
+["YouTube Premium","No Ads • Background Play","20.000","#ff0000,#800000","Y"],
+["Viu Premium","Drama Korea • Full HD","12.000","#0088cc,#005f8f","V"],
+["WeTV VIP","Drama China • No Ads","15.000","#ff6b00,#ff2e00","W"],
+["Disney+ Hotstar","Marvel • Pixar • HD","25.000","#00a8e1,#0066ff","D+"],
+["Prime Video","Amazon Original","18.000","#00c8ff,#0051ff","P"],
+["iQIYI VIP","Drama Asia • VIP","15.000","#f60,#c30","iQ"],
+["Canva Pro","Semua template unlocked","15.000","#00c4cc,#7d2ae8","C"],
+["Adobe Photoshop","Full version premium","30.000","#00b4ff,#001e36","Ps"],
+["CapCut Pro","No watermark • HD","20.000","#ff0050,#00f2ea","Cp"],
+["PicsArt Gold","Sticker & efek premium","12.000","#ff00aa,#6600ff","Pn"],
+["Adobe Illustrator","Vector design premium","30.000","#f77737,#fd1d1d","Ai"],
+["Lightroom Premium","Semua preset premium","20.000","#ff4500,#8a2be2","Lr"],
+["ChatGPT Plus","GPT-4 • Unlimited","35.000","#10a37f,#0a6e56","Gpt"],
+["Gemini Advanced","Google AI Premium","30.000","#7b2ff7,#f107a3","Gm"],
+["Claude Pro","Anthropic AI Premium","30.000","#00bcd4,#006064","Cl"],
+["Google One","100GB Storage","20.000","#4285f4,#0f9d58","Go"],
+["Microsoft 365","Office + 1TB OneDrive","25.000","#0078d4,#00b7c3","Ms"],
+["Notion Plus","Unlimited • AI","20.000","#000,#4b4b4b","Nn"],
+["Alight Motion Pro","No watermark premium","15.000","#00c4cc,#00b7c3","Am"],
+["ML Diamond","Top up MLBB murah","5.000","#ff9900,#ff5500","ML"],
+["Free Fire Diamond","Top up FF cepat","5.000","#ff3c00,#ff7300","FF"],
+["PUBG UC","Top up UC murah","10.000","#00b4ff,#0055aa","Pu"],
+["Wattpad Premium","No Ads • Offline","12.000","#00a651,#007a3d","Wn"],
+["VPN Premium","Unlimited • Global","15.000","#00d9ff,#0055ff","Vn"],
+["Twitch Turbo","No Ads • Custom emote","18.000","#ffb800,#ff6a00","Tw"],
+["Zoom Pro","Meeting unlimited","20.000","#00e676,#00b248","Zh"],
+["Duolingo Super","No Ads • Unlimited","15.000","#9146ff,#5c16c5","Du"]
+];
+
+// RENDER APLIKASI
+document.getElementById('apps').innerHTML=apps.map((a,i)=>`
+<div class="card" style="animation-delay:${i*.03}s">
+<div class="ch"><div class="ic" style="background:linear-gradient(135deg,${a[3]})">${a[4]}</div><h3>${a[0]}</h3></div>
+<p class="d">${a[1]}</p>
+<div class="pr"><div class="p">Rp ${a[2]}<small>/bulan</small></div><a href="https://t.me/HIRROFFCIAL" class="buy">Beli</a></div>
+</div>`).join('');
+
+// DROPDOWN PRODUK
+document.getElementById('pd').innerHTML+=apps.map(a=>`<option>${a[0]} - Rp ${a[2]}</option>`).join('');
+
+// DATA TESTIMONI
+const testis=[
+["Andi Pratama","@andiprtm","Netflix amanah banget, 3 bulan gak pernah kena masalah. Admin fast respon!","2 hari lalu","#00d4ff,#0077ff","A"],
+["Sinta Dewi","@sintadw","Canva Pro paling murah di sini, prosesnya cepet banget. Recommended!","1 minggu lalu","#7b2ff7,#f107a3","S"],
+["Budi Santoso","@budisan_","Awalnya ragu, ternyata legit. Udah repeat order 2x. Mantap!","3 hari lalu","#00ff88,#00b248","B"],
+["Rina Marlina","@rinamarlina","ChatGPT Plus worth it banget, harga jauh lebih murah dari official.","5 hari lalu","#ff6b00,#ff2e00","R"],
+["Dimas Arif","@dimasarif","Top up ML cepet, gak sampai 5 menit langsung masuk. Fix langganan!","1 hari lalu","#ff0050,#00f2ea","D"],
+["Nabila Putri","@nabillaptr","Admin fast respon 24 jam, sabar jawab pertanyaan newbie. Netflix aman!","4 hari lalu","#0088cc,#00b4ff","N"],
+["Fajar Nugroho","@fajarnug","Langganan dari 2021, gak pernah kecewa. Sekarang beli banyak app di sini.","1 minggu lalu","#10a37f,#0a6e56","F"],
+["Maya Anggraini","@mayaang","Harga bersahabat, kualitas oke, admin ramah. Pokoknya top!","3 hari lalu","#ffc107,#ff6a00","M"],
+["Yoga Prasetyo","@yogapras","Beli Disney+ buat nonton keluarga. Aman, murah, puas!","2 hari lalu","#9146ff,#5c16c5","Y"]
+];
+
+// RENDER TESTIMONI
+document.getElementById('testis').innerHTML=testis.map(t=>`
+<div class="tc">
+<div class="date">${t[3]}</div>
+<div class="th"><div class="av" style="background:linear-gradient(135deg,${t[4]})">${t[5]}</div><div><div class="tn">${t[0]}</div><div class="tu">${t[1]}</div></div></div>
+<div class="str">★★★★★</div>
+<p class="tt">"${t[2]}"</p>
+<span class="vb">✓ Verified Buyer</span>
+</div>`).join('');
+
+// LOADER
+window.addEventListener('load',()=>{
+setTimeout(()=>{document.getElementById('loader').classList.add('hide');countUp();},1200);
+});
+
+// COUNTER
+function countUp(){
+document.querySelectorAll('.n').forEach(el=>{
+const t=+el.dataset.t,s=performance.now();
+(function u(n){
+const p=Math.min((n-s)/1800,1),e=1-Math.pow(1-p,3),c=Math.floor(t*e);
+el.textContent=t>=1000?c.toLocaleString('id-ID')+'+':(t===100?c+'%':c+'+');
+if(p<1)requestAnimationFrame(u);
+})(s);
+});
+}
+
+// FORM
+document.getElementById('of').addEventListener('submit',e=>{
+e.preventDefault();
+const n=nm.value.trim(),t=tg2.value.trim(),p=pd.value,d=dr.value,c=ct.value.trim();
+if(!n||!t||!p||!d)return toast('⚠️ Lengkapi data dulu!','#ff9800');
+const msg=`🛒 *PESANAN BARU - HIRROFFCIAL STORE*\n\n👤 Nama: ${n}\n📱 Telegram: ${t}\n📦 Produk: ${p}\n⏳ Durasi: ${d}\n📝 Catatan: ${c||'-'}\n\nMohon diproses ya admin 🙏`;
+toast('✅ Mengarahkan ke Telegram...','#00c853');
+setTimeout(()=>{window.open('https://t.me/HIRROFFCIAL?text='+encodeURIComponent(msg),'_blank');e.target.reset();},700);
+});
+
+// TOAST
+let tt;
+function toast(m,c){const el=document.getElementById('toast');el.textContent=m;el.style.background=`linear-gradient(90deg,${c},${c}cc)`;el.style.boxShadow=`0 8px 25px ${c}88`;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),3000);}
+</script>
+</body>
+</html>
